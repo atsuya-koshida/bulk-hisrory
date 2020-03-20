@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# ER図
+![ERD](https://user-images.githubusercontent.com/59789801/77141691-229a6e80-6ac1-11ea-9d8c-60a44060f5c7.png)
