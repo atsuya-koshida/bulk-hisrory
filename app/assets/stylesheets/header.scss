@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 1000px;
+  height: 90px;
+  margin: 0 0 0 -500px;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.9);
+  font-family: "Montserrat", sans-serif;
+  &__inner {
+    line-height: 90px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 25px;
+    padding: 0 20px;
+  }
+  &__ul {
+    display: flex;
+    font-size: 12px;
+  }
+  &__li {
+    padding: 0 30px;
+
+    &.orange {
+      background: linear-gradient(45deg, #e94908 0%, #e0b315 100%);
+    }
+    &:hover {
+      background-color: #333333;
+      transition: background-color 0.3s;
+    }
+  }
+}
