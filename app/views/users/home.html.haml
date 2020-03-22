@@ -25,6 +25,31 @@
     .about__title
       %span About
     .about__content
-      .about__image
-      .about__text
-        %h1 
+      .about__left-box
+      .about__right-box
+        .about__description
+          %h1 Bulk Historyとは？
+          %h4
+            Bulk Historyはシンプルなワークアウトの記録アプリです。
+          %h4
+            あなただけのトレーニングメニューを作成。
+          %h4
+            簡単にトレーニングを記録。
+          %h4
+            日々の積み重ねを可視化し、トレーニングの継続をサポートします。
+          %h4
+            あなたも今すぐ記録を開始しましょう。
+          %h4
+            Work hard, See results.
+        .about__btn
+          = link_to 'Sign Up', new_user_registration_path, class: 'link'
+%footer.footer
+  .footer__nav
+    %ul.footer__ul
+      %li.footer__li
+        = link_to 'Home', root_path, class: 'link item'
+      %li.footer__li
+        = link_to 'Company', '#', class: 'link item'
+      %li.footer__li
+        = link_to 'Contact', '#', class: 'link item'
+

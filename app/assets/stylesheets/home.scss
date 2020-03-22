@@ -31,15 +31,37 @@
   &__content {
     display: flex;
   }
-  &__image {
-    width: 40%;
+  &__left-box {
+    width: 60%;
     height: 500px;
     background-image: image-url('workout4.jpeg');
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
   }
-  &__text {
-    width: 60%;
+  &__right-box {
+    width: 40%;
+    padding: 40px;
+  }
+
+  &__description {
+    & > h4 {
+      padding-top: 20px;
+    }
+    & > h1 {
+      display: inline-block;
+      border-bottom: 1px solid #FF9900;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    width: 20%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    background: linear-gradient(45deg, #e94908 0%, #e0b315 100%);
   }
 }
