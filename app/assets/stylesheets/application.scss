@@ -1,0 +1,16 @@
+@import 'reset';
+@import 'users';
+@import 'training_menus';
+@import 'header';
+@import 'home';
+
+body {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: white;
+}

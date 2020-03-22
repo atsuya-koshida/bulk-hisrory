@@ -1,0 +1,67 @@
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: image-url('workout1.jpeg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  &__text {
+    font-size: 80px;
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  &__subtext {
+    font-family: "Montserrat", sans-serif;
+  }
+}
+.about {
+  background-color: black;
+
+  &__title {
+    border-bottom: 1px solid #FF9900;
+    text-align: center;
+    font-size: 26px;
+    line-height: 1.4;
+    padding: 20px 0;
+    position: relative;
+  }
+  &__content {
+    display: flex;
+  }
+  &__left-box {
+    width: 60%;
+    height: 500px;
+    background-image: image-url('workout4.jpeg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+  &__right-box {
+    width: 40%;
+    padding: 40px;
+  }
+
+  &__description {
+    & > h4 {
+      padding-top: 20px;
+    }
+    & > h1 {
+      display: inline-block;
+      border-bottom: 1px solid #FF9900;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    width: 20%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 0;
+    background: linear-gradient(45deg, #e94908 0%, #e0b315 100%);
+  }
+}
