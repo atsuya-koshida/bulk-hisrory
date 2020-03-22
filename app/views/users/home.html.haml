@@ -1,21 +1,4 @@
-%header.header
-  .header__inner
-    .header__title
-      = link_to 'Bulk History', root_path, class: "link"
-    %nav.header__nav
-      %ul.header__ul
-        - if user_signed_in?
-          %li.header__li
-            = link_to 'New Work Out', '#', class: "link"
-          %li.header__li
-            = link_to 'Log Out', destroy_user_session_path, method: :delete, class: "link"
-          %li.header__li.orange
-            = link_to 'My Page', '#', class: "link"
-        - else
-          %li.header__li
-            = link_to 'Sign In', new_user_session_path, class: "link"
-          %li.header__li.orange
-            = link_to 'Sign Up', new_user_registration_path, class: "link"
+= render 'shared/header'
 .container
   %section.main
     %h1.main__text
@@ -43,13 +26,5 @@
             Work hard, See results.
         .about__btn
           = link_to 'Sign Up', new_user_registration_path, class: 'link'
-%footer.footer
-  .footer__nav
-    %ul.footer__ul
-      %li.footer__li
-        = link_to 'Home', root_path, class: 'link item'
-      %li.footer__li
-        = link_to 'Company', '#', class: 'link item'
-      %li.footer__li
-        = link_to 'Contact', '#', class: 'link item'
+= render 'shared/footer'
 

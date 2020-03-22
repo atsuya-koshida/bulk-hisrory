@@ -1,0 +1,18 @@
+%header.header
+  .header__inner
+    .header__title
+      = link_to 'Bulk History', root_path, class: "link"
+    %nav.header__nav
+      %ul.header__ul
+        - if user_signed_in?
+          %li.header__li
+            = link_to 'New Work Out', '#', class: "link"
+          %li.header__li
+            = link_to 'Log Out', destroy_user_session_path, method: :delete, class: "link"
+          %li.header__li.orange
+            = link_to 'My Page', '#', class: "link"
+        - else
+          %li.header__li
+            = link_to 'Sign In', new_user_session_path, class: "link"
+          %li.header__li.orange
+            = link_to 'Sign Up', new_user_registration_path, class: "link"
