@@ -1,9 +1,26 @@
 .container {
   padding-top: 90px;
   background-color: black;
+  text-align: center;
+  height: calc(100vh - 90px);
+  display: flex;
   
   &__inner {
     width: 78%;
     margin: 0 auto;
+
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__form {
+    padding-top: 25px;
+    border: 1px solid #FF9900;
+  }
+  .form-group {
+    margin: 0 auto;
+    margin-bottom: 10px;
   }
 }

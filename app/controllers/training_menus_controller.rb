@@ -10,7 +10,6 @@ class TrainingMenusController < ApplicationController
 
   def create
     @training_menu = TrainingMenu.new(training_menu_params)
-    binding.pry
     if @training_menu.save
       redirect_to root_path
     else
