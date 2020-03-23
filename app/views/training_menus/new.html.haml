@@ -1,0 +1,13 @@
+= render 'shared/header'
+.container
+  .container__inner
+    .container__title メニューの追加
+    = form_with model: @training_menu, local: true do |f|
+      .form-group
+        = f.label :title, '種目名'
+        = f.text_field :title
+      .form-group
+        = f.label :part_id, '部位'
+        = f.collection_select :part_id, Part.all, :id, :name
+      = f.submit '追加する'
+    

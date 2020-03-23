@@ -1,6 +1,27 @@
 class TrainingMenusController < ApplicationController
 
   def index
-    
+    @training_menus = TrainingMenu.all
+  end
+
+  def new
+    @training_menu = TrainingMenu.new
+  end
+
+  def create
+    @training_menu = TrainingMenu.new(training_menu_params)
+    binding.pry
+    if @training_menu.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+
+
+  private
+  def training_menu_params
+    params.require(:training_menu).permit(:title, :part_id).merge(user_id: current_user.id)
   end
 end

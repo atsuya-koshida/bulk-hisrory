@@ -6,7 +6,7 @@
       %ul.header__ul
         - if user_signed_in?
           %li.header__li
-            = link_to 'New Work Out', '#', class: "link"
+            = link_to 'New Work Out', new_training_menu_path, class: "link"
           %li.header__li
             = link_to 'Log Out', destroy_user_session_path, method: :delete, class: "link"
           %li.header__li.orange
