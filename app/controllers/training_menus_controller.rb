@@ -29,8 +29,7 @@ class TrainingMenusController < ApplicationController
     @training_menu.destroy
     head :no_content
   end
-
-
+  
 
   private
   def training_menu_params
