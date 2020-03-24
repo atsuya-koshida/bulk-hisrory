@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_20_073458) do
+ActiveRecord::Schema.define(version: 2020_03_24_091625) do
 
   create_table "training_menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -36,5 +36,16 @@ ActiveRecord::Schema.define(version: 2020_03_20_073458) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "workouts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "date", null: false
+    t.integer "quality", null: false
+    t.text "description"
+    t.bigint "training_menu_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_menu_id"], name: "index_workouts_on_training_menu_id"
+  end
+
   add_foreign_key "training_menus", "users"
+  add_foreign_key "workouts", "training_menus"
 end
