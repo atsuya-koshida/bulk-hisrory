@@ -1,2 +1,10 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.delete').forEach(function(a) {
+    a.addEventListener('ajax:success', function() {
+      var td = a.parentNode;
+      var tr = td.parentNode;
+      tr.style.display = 'none';
+    });
+  });
+});
+

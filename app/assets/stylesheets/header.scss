@@ -1,14 +1,12 @@
 .header {
   position: fixed;
-  top: 0;
-  left: 50%;
-  width: 1000px;
+  width: 100vw;
   height: 90px;
-  margin: 0 0 0 -500px;
   z-index: 200;
   background-color: rgba(0, 0, 0, 0.9);
   font-family: "Montserrat", sans-serif;
   &__inner {
+    padding: 0 110px;
     line-height: 90px;
     display: flex;
     justify-content: space-between;
@@ -32,17 +30,5 @@
       background-color: #333333;
       transition: background-color 0.3s;
     }
-  }
-}
-
-.footer {
-  border-top: 1px solid #FF9900;
-  background-color: black;
-  width: 100vw;
-  text-align: center;
-  padding: 30px 0;
-  &__ul {
-    display: flex;
-    justify-content: space-evenly;
   }
 }

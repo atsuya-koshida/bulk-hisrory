@@ -1,5 +1,6 @@
 .main {
-  height: 100vh;
+  height: calc(100vh - 90px);
+  padding-top: 90px;
   display: flex;
   align-items: center;
   background-image: image-url('workout1.jpeg');

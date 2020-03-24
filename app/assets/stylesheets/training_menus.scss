@@ -1,3 +1,40 @@
-// Place all the styles related to the training_menus controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  padding-top: 90px;
+  background-color: black;
+  height: calc(100vh - 90px);
+  
+  &.flex {
+    text-align: center;
+    display: flex;
+  }
+  
+  &__inner {
+    width: 78%;
+    margin: 0 auto;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &__form {
+    padding-top: 25px;
+    border: 1px solid #FF9900;
+  }
+  &__body {
+  }
+  .form-group {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+table {
+  width: 100%;
+  td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #FF9900;
+  }
+}
