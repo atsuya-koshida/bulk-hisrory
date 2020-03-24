@@ -1,5 +1,5 @@
 = render 'shared/header'
-.container
+.container.flex
   .container__inner
     .container__title メニューの追加
     .container__form
@@ -12,3 +12,4 @@
           = f.collection_select :part_id, Part.all, :id, :name
         .form-group
           = f.submit '追加する', class: 'submit-btn'
+= render 'shared/footer'
