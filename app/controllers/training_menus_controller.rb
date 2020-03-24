@@ -1,5 +1,5 @@
 class TrainingMenusController < ApplicationController
-  before_action :set_training_menu, only: [:destroy]
+  before_action :set_training_menu, only: [:edit, :update, :destroy]
   def index
     @training_menus = TrainingMenu.all
   end
@@ -11,10 +11,18 @@ class TrainingMenusController < ApplicationController
   def create
     @training_menu = TrainingMenu.new(training_menu_params)
     if @training_menu.save
-      redirect_to root_path
+      redirect_to training_menus_path
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @training_menu.update(training_menu_params)
+    redirect_to training_menus_path, notice: "種目「#{@training_menu.title}」を更新しました。"
   end
 
   def destroy
