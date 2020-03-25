@@ -1,15 +1,15 @@
 = render 'shared/header'
 .container.flex
   .container__inner
-    .container__title 種目の追加
+    .container__title 記録の追加
     .container__form
       = form_with model: @training_menu, local: true do |f|
         .form-group
-          = f.label :title, '種目名'
-          = f.text_field :title
+          = f.label :date, '日時'
+          = f.text_field :date
         .form-group
-          = f.label :part_id, '部位'
-          = f.collection_select :part_id, Part.all, :id, :name
+          = f.label :quality, '評価'
+          = f.collection_select :quality, Part.all, :id, :name
         .form-group
           = f.submit '追加する', class: 'submit-btn'
 = render 'shared/footer'

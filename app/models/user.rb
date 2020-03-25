@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  has_many :training_menus
+  has_many :training_menus, dependent: :destroy
 end
