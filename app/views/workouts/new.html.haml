@@ -6,10 +6,12 @@
       = form_with model: @training_menu, local: true do |f|
         .form-group
           = f.label :date, '日時'
-          = f.text_field :date
+          = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'
         .form-group
-          = f.label :quality, '評価'
+          = f.label :quality, '今日のコンディション'
           = f.collection_select :quality, Part.all, :id, :name
+        .form-group
+          = f.text_area :description, rows: 5, cols: 40, placeholder: 'メモを入力できます'
         .form-group
           = f.submit '追加する', class: 'submit-btn'
 = render 'shared/footer'
