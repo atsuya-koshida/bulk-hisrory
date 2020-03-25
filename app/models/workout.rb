@@ -1,4 +1,6 @@
 class Workout < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :quality
   belongs_to :training_menu
 
   validates :date, presence: true

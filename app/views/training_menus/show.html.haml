@@ -1,0 +1,25 @@
+= render 'shared/header'
+.container
+  .container__inner
+    .container__title
+      %p #{@training_menu.title}の記録
+    .container__btn
+      %button.submit-btn
+        = link_to '新規登録', workout_new_training_menu_path, class: 'link'
+    %table{ style: 'width: 100%;'}
+      %thead
+        %tr
+          %th= '日時'
+          %th= '評価'
+          %th= 'メモ'
+          %th
+      %tbody
+        - @workouts.each do |workout|
+          %tr
+            %td= workout.date.strftime("%Y年/%m月/%d日 %-H時%-M分")
+            %td= workout.quality.rate
+            %td= workout.description
+            %td
+              = link_to '編集', '#', class: 'edit-btn link'
+              = link_to '削除', '#', class: 'delete-btn link delete'
+= render 'shared/footer'

@@ -1,31 +1,18 @@
 class WorkoutsController < ApplicationController
 
-  def index
-    training_menu = TrainingMenu.find(params[:training_menu_id])
-    @workouts = training_menu.workouts
-  end
-
-  def new
-    @workout = Workout.new
-  end
-
   def create
-    @workout = Workout.new(workout_params)
+    @training_menu = TrainingMenu.find(params[:id])
+    @workout = @training_menu.workouts.new(workout_params)
     if @workout.save
-      redirect_to workouts_path
+      redirect_to training_menu_path
     else
-      render :new
+      render workout_new_training_menu_path(params[:id])
     end
   end
 
   private
 
   def workout_params
-    params.require(:workout).permit(:date, :quality, :description).merge(id: training_menu_id)
+    params.require(:workout).permit(:date, :quality_id, :description)
   end
-
-  def set_workout
-    @workout = Workout.find(params[:id])
-  end
-
 end

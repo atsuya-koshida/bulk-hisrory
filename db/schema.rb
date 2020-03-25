@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_25_010716) do
+ActiveRecord::Schema.define(version: 2020_03_25_011445) do
 
   create_table "training_menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_010716) do
     t.bigint "training_menu_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quality_id"
     t.index ["training_menu_id"], name: "index_workouts_on_training_menu_id"
   end
 
