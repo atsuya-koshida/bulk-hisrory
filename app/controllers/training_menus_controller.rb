@@ -33,11 +33,10 @@ class TrainingMenusController < ApplicationController
 
   def show
     @training_menu = TrainingMenu.find(params[:id])
-    @workouts = @training_menu.workouts
+    @workouts = @training_menu.workouts.page(params[:page]).per(8)
   end
 
   def workout_new
-    @training_menu = TrainingMenu.new
     @workout = Workout.new
   end
 
