@@ -1,7 +1,7 @@
 class TrainingMenusController < ApplicationController
   before_action :set_training_menu, only: [:edit, :update, :destroy]
   def index
-    @training_menus = TrainingMenu.all
+    @training_menus = TrainingMenu.all.page(params[:page]).per(8)
   end
 
   def new
@@ -38,6 +38,10 @@ class TrainingMenusController < ApplicationController
 
   def workout_new
     @workout = Workout.new
+  end
+
+  def workout_edit
+    @workout = Workout.find(params[:id])
   end
 
   private

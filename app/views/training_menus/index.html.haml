@@ -20,4 +20,7 @@
               = link_to '記録', training_menu_path(menu), class: 'submit-btn link'
               = link_to '編集', edit_training_menu_path(menu), class: 'edit-btn link'
               = link_to '削除', menu, method: :delete, remote: true, data: { confirm: "トレーニング「#{menu.title}」を削除します。よろしいですか？"}, class: 'delete-btn link delete'
+    .pagenate
+      = paginate @training_menus
+      = page_entries_info @training_menus
 = render 'shared/footer'

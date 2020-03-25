@@ -1,0 +1,17 @@
+= render 'shared/header'
+.container.flex
+  .container__inner
+    .container__title 記録の編集
+    .container__form
+      = form_with model: @workout, url: workout_path, local: true do |f|
+        .form-group
+          = f.label :date, '日時'
+          = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'
+        .form-group
+          = f.label :quality_id, '今日のコンディション'
+          = f.collection_select :quality_id, Quality.all, :id, :rate
+        .form-group
+          = f.text_area :description, rows: 5, cols: 40, placeholder: 'メモを入力できます'
+        .form-group
+          = f.submit '更新する', class: 'submit-btn'
+= render 'shared/footer'

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :training_menus do
     member do
       get 'workout_new', to: 'training_menus#workout_new'
-      resources :workouts, only: [:create]
+      get 'workout_edit', to: 'training_menus#workout_edit'
+      resources :workouts, only: [:create, :update, :destroy]
     end
   end
 end
