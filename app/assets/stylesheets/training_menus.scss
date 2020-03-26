@@ -1,0 +1,68 @@
+.container {
+  padding-top: 90px;
+  background-color: black;
+  height: calc(100vh - 90px);
+  
+  &.flex {
+    text-align: center;
+    display: flex;
+  }
+  
+  &__inner {
+    width: 78%;
+    margin: 0 auto;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    border: 1px solid #FF9900;
+
+    
+  }
+  &__btn {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+table {
+  width: 100%;
+  td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #FF9900;
+  }
+}
+
+.form {
+  width: 47%;
+  &__group {
+    margin: 0 4px 10px 10px;
+  }
+  &__detail {
+    display: flex;
+  }
+  &__text {
+  }
+}
+
+.text-form {
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+}
+
+textarea {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+}
