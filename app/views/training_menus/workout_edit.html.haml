@@ -4,6 +4,7 @@
     .container__title 記録の編集
     .container__form
       = form_with model: @workout, url: workout_path, local: true do |f|
+        = render 'layouts/error_messages', model: f.object
         .form__group
           = f.label :date, '日時'
           = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'

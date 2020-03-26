@@ -4,6 +4,7 @@
     .container__title 種目の追加
     .container__form
       = form_with model: @training_menu, local: true do |f|
+        = render 'layouts/error_messages', model: f.object
         .form-group
           = f.label :title, '種目名'
           = f.text_field :title

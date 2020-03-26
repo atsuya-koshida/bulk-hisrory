@@ -9,6 +9,14 @@ ja:
     models:
       workout: 記録
       training_menu: 種目
+    attributes:
+      training_menu:
+        id: ID
+        title: 種目名
+        part_id: 部位
+      workout_details:
+        weight: 重量
+        reps: 回数
   date:
     abbr_day_names:
     - 日
