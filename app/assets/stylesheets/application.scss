@@ -4,6 +4,11 @@
 @import 'header';
 @import 'footer';
 @import 'home';
+@import 'user';
+
+html {
+  background-color: black;
+}
 
 body {
   color: white;

@@ -23,7 +23,11 @@
           あなたも今すぐ記録を開始しましょう。
         %h4
           Work hard, See results.
-      .about__btn
-        = link_to 'Sign Up', new_user_registration_path, class: 'link'
+      - if user_signed_in?
+        .about__btn--active
+          = link_to 'My Workouts', new_training_menu_path, class: 'link'
+      - else
+        .about__btn
+          = link_to 'Sign Up', new_user_registration_path, class: 'submit-btn link'
 = render 'shared/footer'
 
