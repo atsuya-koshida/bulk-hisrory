@@ -7,6 +7,14 @@
         .form-group
           = f.label :date, '日時'
           = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'
+        .form-detail
+          = f.fields_for :workout_details, @workout.workout_details do |d|
+            .form-group
+              = d.number_field :weight, step: "0.1", placeholder: '重量を入力して下さい'
+              = d.label :weight, 'kg'
+            .form-group
+              = d.number_field :reps, placeholder: '回数を入力して下さい'
+              = d.label :reps, '回'
         .form-group
           = f.label :quality_id, '今日のコンディション'
           = f.collection_select :quality_id, Quality.all, :id, :rate

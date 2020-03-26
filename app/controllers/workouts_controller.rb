@@ -1,12 +1,13 @@
 class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:destroy, :update]
+
   def create
     @training_menu = TrainingMenu.find(params[:id])
     @workout = @training_menu.workouts.new(workout_params)
     if @workout.save
       redirect_to training_menu_path
     else
-      render workout_new_training_menu_path(params[:id])
+      render template: "training_menus/workout_new"
     end
   end
 
@@ -23,7 +24,7 @@ class WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:date, :quality_id, :description)
+    params.require(:workout).permit(:date, :quality_id, :description, workout_details_attributes: [:id, :weight, :reps])
   end
 
   def set_training_menu

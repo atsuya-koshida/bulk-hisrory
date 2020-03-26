@@ -8,6 +8,7 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       workout: 記録
+      training_menu: 種目
   date:
     abbr_day_names:
     - 日

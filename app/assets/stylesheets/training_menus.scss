@@ -18,17 +18,24 @@
     text-align: center;
   }
   &__form {
+    display: flex;
+    justify-content: center;
     padding-top: 25px;
     border: 1px solid #FF9900;
+
+    .form-group {
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+
+    .form-detail {
+      display: flex;
+    }
   }
   &__btn {
     margin: 10px 0;
     display: flex;
     justify-content: center;
-  }
-  .form-group {
-    margin: 0 auto;
-    margin-bottom: 10px;
   }
 }
 
@@ -39,4 +46,8 @@ table {
     vertical-align: top;
     border-top: 1px solid #FF9900;
   }
+}
+
+.form {
+  width: 47%;
 }
