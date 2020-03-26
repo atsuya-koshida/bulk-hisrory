@@ -16,17 +16,19 @@
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 30px;
   }
   &__form {
+    display: flex;
+    justify-content: center;
     padding-top: 25px;
     border: 1px solid #FF9900;
+
+    
   }
-  &__body {
-  }
-  .form-group {
-    margin: 0 auto;
-    margin-bottom: 10px;
+  &__btn {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -37,4 +39,30 @@ table {
     vertical-align: top;
     border-top: 1px solid #FF9900;
   }
+}
+
+.form {
+  width: 47%;
+  &__group {
+    margin: 0 4px 10px 10px;
+  }
+  &__detail {
+    display: flex;
+  }
+  &__text {
+  }
+}
+
+.text-form {
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+}
+
+textarea {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
 }
