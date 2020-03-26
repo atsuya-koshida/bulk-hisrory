@@ -1,16 +1,38 @@
-= render 'shared/header'
-.container.flex
-  .container__inner
-    .container__title 種目の編集
-    .container__form
+-# = render 'shared/header'
+-# .container.flex
+-#   .container__inner
+-#     .container__title 種目の編集
+-#     .container__form
+-#       = form_with model: @training_menu, local: true do |f|
+-#         = render 'layouts/error_messages', model: f.object
+-#         .form-group
+-#           = f.label :title, '種目名'
+-#           = f.text_field :title
+-#         .form-group
+-#           = f.label :part_id, '部位'
+-#           = f.collection_select :part_id, Part.all, :id, :name
+-#         .form-group
+-#           = f.submit '更新する', class: 'submit-btn'
+-# = render 'shared/footer'
+
+#workout-page.workout-page
+  .workout-page__inner.clearfix
+    .workout-page__inner--left.workout-page__header
+      %h2 Edit Workout
+      %h5 トレーニング種目の編集
+      = link_to 'Back', :back, class: 'btn link'
+    .workout-page__inner--right.user-form
       = form_with model: @training_menu, local: true do |f|
         = render 'layouts/error_messages', model: f.object
-        .form-group
-          = f.label :title, '種目名'
-          = f.text_field :title
-        .form-group
-          = f.label :part_id, '部位'
-          = f.collection_select :part_id, Part.all, :id, :name
-        .form-group
-          = f.submit '更新する', class: 'submit-btn'
-= render 'shared/footer'
+        .field
+          .field-label
+            = f.label :title, '種目名'
+          .field-input
+            = f.text_field :title, autofocus: true
+        .field
+          .field-label
+            = f.label :part_id, '部位'
+          .field-input
+            = f.collection_select :part_id, Part.all, :id, :name
+        .actions
+          = f.submit "Create workout", class: 'btn'

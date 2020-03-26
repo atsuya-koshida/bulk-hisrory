@@ -1,27 +1,65 @@
-= render 'shared/header'
-.container.flex
-  .container__inner
-    .container__title 記録の追加
-    .container__form
-      = form_with model: @workout, url: workouts_path, method: :post, local: true, class: 'form' do |f|
+-# = render 'shared/header'
+-# .container.flex
+-#   .container__inner
+-#     .container__title 記録の追加
+-#     .container__form
+-#       = form_with model: @workout, url: workouts_path, method: :post, local: true, class: 'form' do |f|
+-#         = render 'layouts/error_messages', model: f.object
+-#         .form__group
+-#           = f.label :date, '日時'
+-#           = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'
+-#         = f.fields_for :workout_details, @workout.workout_details.new do |d|
+-#           .form__detail
+-#             %span.form__text 1set
+-#             .form__group
+-#               = d.number_field :weight, step: "0.1", placeholder: '重量を入力して下さい', class: 'text-form'
+-#             %span.form__text kg
+-#             .form__group
+-#               = d.number_field :reps, placeholder: '回数を入力して下さい', class: 'text-form'
+-#             %span.form__text 回
+-#         .form__group
+-#           = f.label :quality_id, '今日のコンディション'
+-#           = f.collection_select :quality_id, Quality.all, :id, :rate
+-#         .form__group
+-#           = f.text_area :description, rows: 5, cols: 40, placeholder: 'メモを入力できます'
+-#         .form__group
+-#           = f.submit '追加する', class: 'submit-btn'
+-# = render 'shared/footer'
+
+#workout-page.workout-page
+  .workout-page__inner.clearfix
+    .workout-page__inner--left.workout-page__header
+      %h2 Record Workout
+      %h5 トレーニングを記録する
+      = link_to 'Back', :back, class: 'btn link'
+    .workout-page__inner--right.user-form
+      = form_with model: @workout, url: workouts_path, method: :post, local: true do |f|
         = render 'layouts/error_messages', model: f.object
-        .form__group
-          = f.label :date, '日時'
-          = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'
-        = f.fields_for :workout_details, @workout.workout_details.new do |d|
-          .form__detail
-            %span.form__text 1set
-            .form__group
-              = d.number_field :weight, step: "0.1", placeholder: '重量を入力して下さい', class: 'text-form'
-            %span.form__text kg
-            .form__group
-              = d.number_field :reps, placeholder: '回数を入力して下さい', class: 'text-form'
-            %span.form__text 回
-        .form__group
-          = f.label :quality_id, '今日のコンディション'
-          = f.collection_select :quality_id, Quality.all, :id, :rate
-        .form__group
-          = f.text_area :description, rows: 5, cols: 40, placeholder: 'メモを入力できます'
-        .form__group
-          = f.submit '追加する', class: 'submit-btn'
-= render 'shared/footer'
+        .field
+          .field-label
+            = f.label :date, '日時'
+          .field-input
+            = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'
+          = f.fields_for :workout_details, @workout.workout_details.new do |d|
+            .field
+              .field-label
+                = d.label :weight, '重量'
+              .field-input
+                = d.number_field :weight, step: "0.1", placeholder: '重量を入力して下さい'
+            .field
+              .field-label
+                = d.label :reps, '回数'
+              .field-input
+                = d.number_field :reps, step: "0.1", placeholder: '回数を入力して下さい'
+        .field
+          .field-label
+            = f.label :quality_id, 'コンディション'
+          .field-input
+            = f.collection_select :quality_id, Quality.all, :id, :rate
+        .field
+          .field-label
+            = f.label :description, 'メモ'
+          .field-input
+            = f.text_area :description, rows: 5, cols: 40, placeholder: 'メモを入力できます'
+        .actions
+          = f.submit "Redord workout", class: 'btn'
