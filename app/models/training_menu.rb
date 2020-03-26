@@ -4,7 +4,7 @@ class TrainingMenu < ApplicationRecord
   belongs_to :user
   has_many :workouts, dependent: :destroy
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
   validates :part_id, presence: true
   validates :user_id, presence: true
 end
