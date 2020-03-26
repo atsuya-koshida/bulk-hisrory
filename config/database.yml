@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: bulk-hisrory_production
-  username: bulk-hisrory
-  password: <%= ENV['BULK-HISRORY_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
