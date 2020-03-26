@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root "users#home"
+  resources :users, only: [:edit, :update]
   resources :training_menus do
     member do
       get 'workout_new', to: 'training_menus#workout_new'

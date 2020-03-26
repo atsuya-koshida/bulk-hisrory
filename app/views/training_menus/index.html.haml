@@ -1,7 +1,8 @@
 = render 'shared/header'
 .container
   .container__inner
-    .container__title 種目一覧
+    .container__title
+      %p #{current_user.name}の種目一覧
     .container__btn
       %button.submit-btn
         = link_to '新規登録', new_training_menu_path, class: 'link'

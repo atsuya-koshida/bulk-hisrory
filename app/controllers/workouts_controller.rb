@@ -5,15 +5,18 @@ class WorkoutsController < ApplicationController
     @training_menu = TrainingMenu.find(params[:id])
     @workout = @training_menu.workouts.new(workout_params)
     if @workout.save
-      redirect_to training_menu_path
+      redirect_to training_menu_path,  notice: '記録を登録しました'
     else
       render template: "training_menus/workout_new"
     end
   end
 
   def update
-    @workout.update(workout_params)
-    redirect_to training_menu_path(@workout.training_menu_id)
+    if @workout.update(workout_params)
+      redirect_to training_menu_path(@workout.training_menu_id), notice: '記録を更新しました'
+    else
+      render template: "training_menus/workout_edit"
+    end
   end
 
   def destroy
