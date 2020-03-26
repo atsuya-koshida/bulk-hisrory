@@ -1,7 +1,7 @@
 class TrainingMenusController < ApplicationController
   before_action :set_training_menu, only: [:edit, :update, :destroy]
   def index
-    @training_menus = TrainingMenu.all.page(params[:page]).per(8)
+    @training_menus = current_user.training_menus.page(params[:page]).per(8)
   end
 
   def new

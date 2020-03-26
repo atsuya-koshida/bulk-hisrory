@@ -23,14 +23,7 @@
     padding-top: 25px;
     border: 1px solid #FF9900;
 
-    .form-group {
-      margin: 0 auto;
-      margin-bottom: 10px;
-    }
-
-    .form-detail {
-      display: flex;
-    }
+    
   }
   &__btn {
     margin: 10px 0;
@@ -50,4 +43,26 @@ table {
 
 .form {
   width: 47%;
+  &__group {
+    margin: 0 4px 10px 10px;
+  }
+  &__detail {
+    display: flex;
+  }
+  &__text {
+  }
+}
+
+.text-form {
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
+}
+
+textarea {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none;
 }
