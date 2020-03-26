@@ -12,4 +12,10 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  setTimeout("$('.notification').fadeOut('slow')", 2000);
+});
