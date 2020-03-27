@@ -4,6 +4,7 @@
       %h2 Create Workout
       %h5 新規トレーニング種目の作成
       = link_to 'Back', :back, class: 'btn link'
+      = link_to "トップページに戻る", root_path, class: 'btn link'
     .workout-page__inner--right.user-form
       = form_with model: @training_menu, local: true do |f|
         = render 'layouts/error_messages', model: f.object
