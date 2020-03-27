@@ -32,6 +32,7 @@
       %h2 Record Workout
       %h5 トレーニングを記録する
       = link_to 'Back', :back, class: 'btn link'
+      = link_to "トップページに戻る", root_path, class: 'btn link'
     .workout-page__inner--right.user-form
       = form_with model: @workout, url: workouts_path, method: :post, local: true do |f|
         = render 'layouts/error_messages', model: f.object
