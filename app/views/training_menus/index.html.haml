@@ -6,6 +6,19 @@
     .container__btn
       %button.submit-btn
         = link_to '新規登録', new_training_menu_path, class: 'link'
+    = search_form_for @q do |f|
+      .field
+        .field-label
+          = f.label :title_cont, '種目'
+        .field-input
+          = f.text_field :title_cont, placeholder: '種目名で検索できます'
+      .field
+        .field-label
+          = f.label :part_id_eq, '部位'
+        .field-input
+          = f.collection_select :part_id_eq, Part.all, :id, :name, placeholder: '部位で検索できます'
+      .actions
+        = f.submit "検索", class: 'submit-btn'
     %table{ style: 'width: 100%;'}
       %thead
         %tr
