@@ -16,7 +16,7 @@
         .field-label
           = f.label :part_id_eq, '部位'
         .field-input
-          = f.collection_select :part_id_eq, Part.all, :id, :name, placeholder: '部位で検索できます'
+          = f.collection_select :part_id_eq, Part.all, :id, :name, {prompt: "---"}, placeholder: '部位で検索できます'
       .actions
         = f.submit "検索", class: 'submit-btn'
     %table{ style: 'width: 100%;'}
@@ -37,4 +37,3 @@
     .pagenate
       = paginate @training_menus
       = page_entries_info @training_menus
-= render 'shared/footer'
