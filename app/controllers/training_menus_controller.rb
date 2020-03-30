@@ -23,8 +23,11 @@ class TrainingMenusController < ApplicationController
   end
   
   def update
-    @training_menu.update(training_menu_params)
-    redirect_to training_menus_path, notice: "種目を更新しました。"
+    if @training_menu.update(training_menu_params)
+      redirect_to training_menus_path, notice: "種目を更新しました。"
+    else
+      render :edit
+    end
   end
   
   def destroy
