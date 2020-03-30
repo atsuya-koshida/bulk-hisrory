@@ -1,9 +1,9 @@
 = render 'shared/header'
-.container
-  .container__inner
-    .container__title
+.workout-container
+  .workout-container__inner
+    .workout-container__title
       %p #{current_user.name}の種目一覧
-    .container__btn
+    .workout-container__btn
       %button.submit-btn
         = link_to '新規登録', new_training_menu_path, class: 'link'
     = search_form_for @q do |f|

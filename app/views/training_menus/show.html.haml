@@ -1,9 +1,9 @@
 = render 'shared/header'
-.container
-  .container__inner
-    .container__title
+.workout-container
+  .workout-container__inner
+    .workout-container__title
       %p #{@training_menu.title}の記録
-    .container__btn
+    .workout-container__btn
       %button.submit-btn
         = link_to '新規登録', workout_new_training_menu_path, class: 'link'
     %table{ style: 'width: 100%;'}
@@ -25,4 +25,3 @@
     .pagenate
       = paginate @workouts
       = page_entries_info @workouts
-= render 'shared/footer'

@@ -96,6 +96,103 @@
     justify-content: center;
   }
 }
+.workout-container {
+  padding-top: 90px;
+  background-color: black;
+  
+  .field {
+    margin-bottom: 10px;
+
+    .field-label {
+      padding: 10px 0;
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-weight: 200;
+
+      i {
+        font-size: 11px;
+      }
+    }
+
+    .field-input {
+      input {
+        width: 100%;
+        padding: 10px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    height: 50px;
+    padding: 0 30px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+  }
+
+  input[type='submit'] {
+    float: left;
+    margin-top: 20px;
+    color: #fff;
+    background: linear-gradient(45deg, #e94908 0%, #e0b315 100%);
+  }
+
+  .field-label {
+    .field_with_errors {
+      display: inline-block;
+      color: #d65f4c;
+      font-weight: 400;
+    }
+  }
+
+  .field-input {
+    .field_with_errors {
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #d65f4c;
+      }
+    }
+  }
+  &.flex {
+    text-align: center;
+    display: flex;
+  }
+  
+  &__inner {
+    width: 78%;
+    margin: 0 auto;
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    border: 1px solid #FF9900;
+
+    
+  }
+  &__btn {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+}
 
 table {
   width: 100%;
