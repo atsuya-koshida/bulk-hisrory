@@ -22,8 +22,8 @@
     %table{ style: 'width: 100%;'}
       %thead
         %tr
-          %th= '種目名'
-          %th= '部位'
+          %th= sort_link(@q, :title)
+          %th= sort_link(@q, :part_id)
           %th
       %tbody
         - @training_menus.each do |menu|
