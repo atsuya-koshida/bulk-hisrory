@@ -49,11 +49,13 @@
                   = d.label :weight, '重量'
                 .field-input
                   = d.number_field :weight, step: "0.1", placeholder: '重量を入力して下さい', class: 'weight'
+                  = d.hidden_field :_destroy, class: 'hidden-id'
               .field
                 .field-label
                   = d.label :reps, '回数'
                 .field-input
                   = d.number_field :reps, step: "0.1", placeholder: '回数を入力して下さい', class: 'reps'
+                  = d.hidden_field :_destroy, class: 'hidden-id'
           %span.addform-box.edit-btn= 'セットを追加'
           %span.deleteform-box.delete-btn= 'セットを減らす'
         .field

@@ -41,8 +41,8 @@
             = f.label :date, '日時'
           .field-input
             = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'
-          .set-box
-            = f.fields_for :workout_details, @workout.workout_details.new do |d|
+          = f.fields_for :workout_details, @workout.workout_details.new do |d|
+            .set-box{ data: '0' }
               %span.no 1
               %span set
               .field
