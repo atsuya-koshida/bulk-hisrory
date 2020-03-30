@@ -42,16 +42,21 @@
           .field-input
             = raw sprintf( f.datetime_select( :date,{ start_year: Time.zone.now.prev_year.year, end_year: Time.zone.now.next_year.year, default: Time.zone.now, use_two_digit_numbers: true, date_separator: '%s', datetime_separator: '%s', time_separator: '%s'},{ class: 'date-select' } ), '年 ', '月 ', '日 ', '時 ') + '分'
           = f.fields_for :workout_details, @workout.workout_details.new do |d|
-            .field
-              .field-label
-                = d.label :weight, '重量'
-              .field-input
-                = d.number_field :weight, step: "0.1", placeholder: '重量を入力して下さい'
-            .field
-              .field-label
-                = d.label :reps, '回数'
-              .field-input
-                = d.number_field :reps, step: "0.1", placeholder: '回数を入力して下さい'
+            .set-box{ data: '0' }
+              %span.no 1
+              %span set
+              .field
+                .field-label
+                  = d.label :weight, '重量'
+                .field-input
+                  = d.number_field :weight, step: "0.1", placeholder: '重量を入力して下さい', class: 'weight'
+              .field
+                .field-label
+                  = d.label :reps, '回数'
+                .field-input
+                  = d.number_field :reps, step: "0.1", placeholder: '回数を入力して下さい', class: 'reps'
+          %span.addform-box.edit-btn= 'セットを追加'
+          %span.deleteform-box.delete-btn= 'セットを減らす'
         .field
           .field-label
             = f.label :quality_id, 'コンディション'

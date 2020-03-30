@@ -1,7 +1,8 @@
 class TrainingMenusController < ApplicationController
   before_action :set_training_menu, only: [:edit, :update, :destroy]
   def index
-    @training_menus = current_user.training_menus.page(params[:page]).per(8)
+    @q = current_user.training_menus.ransack(params[:q])
+    @training_menus = @q.result(distinct: true).page(params[:page]).per(8)
   end
 
   def new
@@ -22,8 +23,11 @@ class TrainingMenusController < ApplicationController
   end
   
   def update
-    @training_menu.update(training_menu_params)
-    redirect_to training_menus_path, notice: "種目を更新しました。"
+    if @training_menu.update(training_menu_params)
+      redirect_to training_menus_path, notice: "種目を更新しました。"
+    else
+      render :edit
+    end
   end
   
   def destroy

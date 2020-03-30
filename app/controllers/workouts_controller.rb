@@ -12,7 +12,7 @@ class WorkoutsController < ApplicationController
   end
 
   def update
-    if @workout.update(workout_params)
+    if @workout.update(workout_params_update)
       redirect_to training_menu_path(@workout.training_menu_id), notice: '記録を更新しました'
     else
       render template: "training_menus/workout_edit"
@@ -27,7 +27,11 @@ class WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:date, :quality_id, :description, workout_details_attributes: [:id, :weight, :reps])
+    params.require(:workout).permit(:date, :quality_id, :description, workout_details_attributes: [:id, :weight, :reps, :_destroy])
+  end
+
+  def workout_params_update
+    params.require(:workout).permit(:date, :quality_id, :description, workout_details_attributes: [:id, :weight, :reps, :_destroy])
   end
 
   def set_training_menu
