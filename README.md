@@ -1,27 +1,30 @@
-# README
+## Bulk History
+http://52.198.106.57/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+トレーニングの記録ができるアプリです。
+趣味で筋トレをするので日々の記録ができるアプリが欲しいと思い作成しました。
+トレーニングの種目を登録することができ、それぞれの種目に対して扱った重量・回数を記録することができます。
 
-Things you may want to cover:
+## テスト用アカウント
+* メールアドレス
+  test@email.com
+* パスワード
+  111111
 
-* Ruby version
+## 主な使用技術
+* Ruby 2.5.1
+* Rails 5.2.4.2
+* Mysql 5.7
+* AWS
+* JavaScript
 
-* System dependencies
+## 本アプリの機能
+  ### ユーザー
+    * 認証機能(新規登録、ログイン、ログアウト)
+  ### トレーニング記録
+    * トレーニング種目作成・編集・削除（種目名、鍛える部位）
+    * 種目毎の記録作成・編集・削除
+    * 種目検索機能（フリーワード、部位検索）
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# ER図
-![ERD](https://user-images.githubusercontent.com/59789801/77141691-229a6e80-6ac1-11ea-9d8c-60a44060f5c7.png)
+## イメージ
+![bulk-history-complete](https://user-images.githubusercontent.com/59789801/83113913-3a1a5700-a103-11ea-8183-ad0529c903a5.jpg)
